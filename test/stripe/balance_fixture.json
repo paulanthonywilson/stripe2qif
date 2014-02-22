@@ -1,0 +1,45 @@
+{
+  "object": "list",
+  "count": 132,
+  "url": "/v1/balance/history",
+  "data": [
+    {
+      "id": "txn_AAAAAAAAAAAAA",
+      "object": "balance_transaction",
+      "source": "tr_BBBBBBBBBBBBB",
+      "amount": -10000,
+      "currency": "gbp",
+      "net": -10000,
+      "type": "transfer",
+      "created": 1392774281,
+      "available_on": 1393200000,
+      "status": "pending",
+      "fee": 0,
+      "fee_details": [],
+      "description": "STRIPE TRANSFER"
+    },
+    {
+      "id": "txn_3W0XXIJPPKmLXF",
+      "object": "balance_transaction",
+      "source": "ch_CCCCCCCCCCCC",
+      "amount": 80000,
+      "currency": "gbp",
+      "net": 78060,
+      "type": "charge",
+      "created": 1392670892,
+      "available_on": 1393200000,
+      "status": "pending",
+      "fee": 1940,
+      "fee_details": [
+        {
+          "amount": 1940,
+          "currency": "gbp",
+          "type": "stripe_fee",
+          "description": "Stripe processing fees",
+          "application": null
+        }
+      ],
+      "description": "Scottish Ruby Conference 2014 tickets for  Bob Builder  (Order Reference SYL8)"
+    }
+  ]
+}
