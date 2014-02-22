@@ -1,3 +1,7 @@
 # Stripe2qif
 
-** TODO: Add description **
+
+Converts Stripe balance transactions to QIF format (primarily) for uploading to FreeAgent.
+
+
+
