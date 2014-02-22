@@ -1,4 +1,4 @@
-defmodule MetOfficeDataTest do
+defmodule Stripe.ApiTest do
   use ExUnit.Case
   alias HTTPotion.Response
   import Stripe2qif.Stripe.Api, only: [fetch: 3]
