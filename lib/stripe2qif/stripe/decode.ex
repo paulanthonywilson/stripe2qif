@@ -1,5 +1,6 @@
 defmodule Stripe2qif.Stripe.Decode do
   alias Stripe2qif.Stripe.BalanceTransaction
+  import Stripe2qif.DateConvert, only: [unix_epoch_to_date: 1]
 
   def decode_balances << json :: binary >> do
     json
@@ -38,13 +39,6 @@ defmodule Stripe2qif.Stripe.Decode do
       amount: -t["fee"],
       date: t["created"] |> unix_epoch_to_date,
       ]
-  end
-
-  @unix_epoch_start 62167219200 # 1 Jan 1970
-  defp unix_epoch_to_date timestamp do
-    case :calendar.gregorian_seconds_to_datetime(@unix_epoch_start + timestamp) do
-      {date, _} -> date
-    end
   end
 
 end
