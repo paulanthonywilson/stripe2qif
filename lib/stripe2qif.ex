@@ -12,6 +12,5 @@ defmodule Stripe2qif do
     Stripe2qif.Stripe.Api.fetch(api_key, "balance/history", [count: 100])
       |> Stripe2qif.Stripe.Decode.decode_balances
       |> Stripe2qif.Qif.ToQif.to_qif
-      |> IO.puts
   end
 end
