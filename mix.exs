@@ -5,6 +5,7 @@ defmodule Stripe2qif.Mixfile do
     [ app: :stripe2qif,
       version: "0.0.1",
       elixir: "~> 0.12.4",
+      escript_main_module: Stripe2qif.CLI,
       deps: deps ]
   end
 
