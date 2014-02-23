@@ -1,6 +1,6 @@
 defmodule Stripe.DecodeTest do
   use ExUnit.Case
-  import Stripe.Decode
+  import Stripe2qif.Stripe.Decode
 
 
   defp balance_json do

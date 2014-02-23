@@ -1,6 +1,5 @@
-defrecord Stripe.BalanceTransaction, date: nil, amount: nil, description: nil, currency: nil
-
-defmodule Stripe.Decode do
+defmodule Stripe2qif.Stripe.Decode do
+  alias Stripe2qif.Stripe.BalanceTransaction
 
   def decode_balances << json :: binary >> do
     json
@@ -24,7 +23,7 @@ defmodule Stripe.Decode do
   end
 
   defp main_transaction t do
-    Stripe.BalanceTransaction[
+    BalanceTransaction[
       description: t["description"],
       currency: t["currency"],
       amount: t["amount"],
@@ -33,7 +32,7 @@ defmodule Stripe.Decode do
   end
 
   defp fee_transaction t do
-    Stripe.BalanceTransaction[
+    BalanceTransaction[
       description: t["description"],
       currency: t["currency"],
       amount: -t["fee"],
