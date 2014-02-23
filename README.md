@@ -16,4 +16,16 @@ Stripe fees for each ticket are added as a separate transaction, for correct VAT
 
 Note that only 100 transactions are downloaded at a time. It should be possible to automate downloding all matching transactions with multiple requests, but this is not currently implemented.
 
+# Build
+
+Assuming you're [set up for Elixir](http://elixir-lang.org/getting_started/1.html), clone
+
+    mix test
+    mix escriptize
+
+# Download and run
+
+1. Make sure you have [Erlang installed](http://www.erlang.org/doc/installation_guide/INSTALL.html). On a Mac with Homebrew _brew install erlang_ should do the trick.
+2. [Download](https://github.com/paulanthonywilson/stripe2qif/releases/download/v0.1.0/stripe2qif) and stick on the path.
+
 
