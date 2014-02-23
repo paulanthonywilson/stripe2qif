@@ -1,5 +1,8 @@
 defmodule Stripe2qif do
   use Application.Behaviour
+  import Stripe2qif.Stripe.Decode, only: [decode_balances: 1]
+  import Stripe2qif.Stripe.TitoConvert, only: [tito_convert: 2]
+  import Stripe2qif.Qif.ToQif, only: [to_qif: 1]
 
   # See http://elixir-lang.org/docs/stable/Application.Behaviour.html
   # for more information on OTP Applications
@@ -10,7 +13,8 @@ defmodule Stripe2qif do
 
   def run api_key do
     Stripe2qif.Stripe.Api.fetch(api_key, "balance/history", [count: 100])
-      |> Stripe2qif.Stripe.Decode.decode_balances
-      |> Stripe2qif.Qif.ToQif.to_qif
+      |> decode_balances
+      |> tito_convert(true)
+      |> to_qif
   end
 end
