@@ -19,6 +19,12 @@ defmodule Stripe.DecodeTest do
     b = decode_balances(balance_json)
     assert b |> length == 3
     assert (b |> Enum.map(&(&1.amount))) == [-10000, 80000, -1940]
+    assert (b |> Enum.map(&(&1.description))) ==
+      ["STRIPE TRANSFER",
+        "Scottish Ruby Conference 2014 tickets for  Bob Builder  (Order Reference SYL8)",
+        "(fee) Scottish Ruby Conference 2014 tickets for  Bob Builder  (Order Reference SYL8)",
+        ]
+
   end
 
 end

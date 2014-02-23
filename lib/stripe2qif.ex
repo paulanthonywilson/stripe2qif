@@ -14,7 +14,7 @@ defmodule Stripe2qif do
   def run api_key do
     Stripe2qif.Stripe.Api.fetch(api_key, "balance/history", [count: 100])
       |> decode_balances
-      |> tito_convert true
+      |> tito_convert(true)
       |> to_qif
   end
 end
