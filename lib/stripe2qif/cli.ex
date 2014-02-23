@@ -10,8 +10,7 @@ defmodule Stripe2qif.CLI do
 
   defp run api_key do
     api_key
-      |>  Stripe2qif.run
-      |> Stripe2qif.Stripe2qif.TitoConvert
+      |> Stripe2qif.run
       |> IO.puts
   end
 end
