@@ -16,6 +16,10 @@ defmodule Stripe.TitoConvert do
     assert convert_description("Super matey ticket yada yada", true) == "Super matey"
   end
 
+  test "handles description being :null" do
+    assert convert_description(:null, true) == :null
+  end
+
 
   test "converts nothing when convert flag is false" do
     assert convert_description("Super matey ticket yada yada", false) == "Super matey ticket yada yada"
