@@ -1,4 +1,5 @@
 defmodule Stripe2qif.CLI do
+  import Stripe2qif.DateConvert, only: [parse_date: 1]
   def main(argv) do
     argv
       |> parse_args
@@ -50,21 +51,5 @@ defmodule Stripe2qif.CLI do
     end
   end
 
-  defp parse_date nil do nil end
-  defp parse_date date do
-    case binary_date_to_list(date) do
-      :error -> :error
-      date_list -> date_list
-                    |> Enum.map(&binary_to_integer/1)
-                    |> list_to_tuple
-    end
-  end
-
-  defp binary_date_to_list date do
-    case Regex.named_captures(%r/(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/g, date) do
-      [year: year, month: month, day: day] -> [year, month, day]
-      _                                    -> :error
-    end
-  end
 
 end
