@@ -12,15 +12,15 @@ defmodule Stripe2qif do
   end
 
 
-  def run api_key, tito, from \\ nil do
-    Stripe2qif.Stripe.Api.fetch(api_key, "balance/history", params(from))
+  def run api_key, tito, until \\ nil do
+    Stripe2qif.Stripe.Api.fetch(api_key, "balance/history", params(until))
       |> decode_balances
       |> tito_convert(tito)
       |> to_qif
   end
 
-  defp params from={_year,_month,_day} do
-    [count: 100, "created[gte]": date_to_unix_epoch(from)]
+  defp params until={_year,_month,_day} do
+    [count: 100, "created[lte]": date_to_unix_epoch(until)]
   end
 
   defp params _ do

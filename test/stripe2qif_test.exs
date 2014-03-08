@@ -17,7 +17,7 @@ defmodule Stripe2qifTest do
   end
 
 
-  test "when from is nil, there is no date filter" do
+  test "when until is nil, there is no date filter" do
     :meck.expect(Api, :fetch, fn _api, _command, params ->
       assert params == [count: 100]
       @empty_dataset
@@ -27,9 +27,9 @@ defmodule Stripe2qifTest do
   end
 
   @feb_23_2014_as_unix_epoch 1393113600
-  test "when from is populated, there is a date filter" do
+  test "when until is populated, there is a date filter" do
     :meck.expect(Api, :fetch, fn _api, _command, params ->
-      assert params == [count: 100, "created[gte]": 1393113600]
+      assert params == [count: 100, "created[lte]": 1393113600]
       @empty_dataset
     end)
 
