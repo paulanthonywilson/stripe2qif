@@ -22,7 +22,7 @@ defmodule Stripe.DecodeTest do
     assert (b |> Enum.map(&(&1.description))) ==
       ["STRIPE TRANSFER",
         "Scottish Ruby Conference 2014 tickets for  Bob Builder  (Order Reference SYL8)",
-        "(fee) Scottish Ruby Conference 2014 tickets for  Bob Builder  (Order Reference SYL8)",
+        "(Stripe fee) Scottish Ruby Conference 2014 tickets for  Bob Builder  (Order Reference SYL8)",
         ]
 
   end

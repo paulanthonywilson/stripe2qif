@@ -34,7 +34,7 @@ defmodule Stripe2qif.Stripe.Decode do
 
   defp fee_transaction t do
     BalanceTransaction[
-      description: "(fee) #{t["description"]}",
+      description: "(Stripe fee) #{t["description"]}",
       currency: t["currency"],
       amount: -t["fee"],
       date: t["created"] |> unix_epoch_to_date,
