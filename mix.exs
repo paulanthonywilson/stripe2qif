@@ -3,7 +3,7 @@ defmodule Stripe2qif.Mixfile do
 
   def project do
     [ app: :stripe2qif,
-      version: "0.1.0",
+      version: "0.2.0",
       elixir: "~> 0.12.4",
       escript_main_module: Stripe2qif.CLI,
       deps: deps ]
