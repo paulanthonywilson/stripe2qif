@@ -7,7 +7,7 @@ Converts Stripe balance transactions to QIF format (primarily) for uploading to 
       Output qif for up to 100 stripe transactions.
 
       --help, -h              Display this message
-      --from DATE             Display transactions from the date
+      --until DATE            Display transactions up to, and including, this date. yyyy-mm-dd
       --tito                  Truncate descriptions before the word "ticket" to make FreeAgent explanations easier
 
 The Tito option is all about FreeAgent transaction explanations - when running conferences from [Tito](https://ti.to/home) it is much easier if the descriptions match so that tickets for a single can be explained in one go.
