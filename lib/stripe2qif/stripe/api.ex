@@ -11,7 +11,7 @@ defmodule Stripe2qif.Stripe.Api do
   end
 
   defp http_options(api_key) do
-    basic_auth = {api_key |> String.to_char_list!, ''}
+    basic_auth = {api_key |> String.to_char_list, ''}
     [ibrowse: [basic_auth: basic_auth]]
   end
 
