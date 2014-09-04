@@ -8,11 +8,11 @@ defmodule Stripe2qif.Stripe.TitoConvert do
     balance_transactions
   end
 
-  defp convert_transaction transaction  = BalanceTransaction[description: :null] do
+  defp convert_transaction transaction  = %BalanceTransaction{description: :null} do
     transaction
   end
-  defp convert_transaction transaction  = BalanceTransaction[description: description] do
-    if captures =  Regex.named_captures(%r/^(?<description>.*)\s+ticket/g, description) do
+  defp convert_transaction transaction  = %BalanceTransaction{description: description} do
+    if captures =  Regex.named_captures(~r/^(?<description>.*)\s+ticket/i, description) do
       transaction.update(description: captures[:description])
     else
       transaction

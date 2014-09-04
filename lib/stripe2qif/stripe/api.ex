@@ -1,13 +1,12 @@
 defmodule Stripe2qif.Stripe.Api do
-  alias HTTPotion.Response
   @user_agent  [ "User-agent": "Elixir:"]
 
 
   def fetch(api_key, command, params) do
     url = "https://api.stripe.com/v1/#{command}?#{param_string(params)}"
     case HTTPotion.get(url, @user_agent, http_options(api_key)) do
-      Response[body: body, status_code: status, headers: _headers ] when status in 200..299 -> body
-      Response[body: body, status_code: status, headers: _headers ] -> raise "Stripe returned status code '#{status}' with body:\n#{body}"
+      %{body: body, status_code: status, headers: _headers} when status in 200..299 -> body
+      %{body: body, status_code: status, headers: _headers} -> raise "Stripe returned status code '#{status}' with body:\n#{body}"
     end
   end
 

@@ -1,5 +1,5 @@
 defmodule Stripe2qif do
-  use Application.Behaviour
+  use Application
   import Stripe2qif.Stripe.Decode, only: [decode_balances: 1]
   import Stripe2qif.Stripe.TitoConvert, only: [tito_convert: 2]
   import Stripe2qif.Qif.ToQif, only: [to_qif: 1]
