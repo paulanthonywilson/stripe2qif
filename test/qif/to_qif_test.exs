@@ -10,8 +10,8 @@ defmodule Qif.ToQifTest do
   test "creates qifs" do
     assert to_qif(
       [
-        BalanceTransaction[date: {2014, 2, 10}, amount: -2350, description: "loss", currency: "gbp"],
-        BalanceTransaction[date: {2014, 2, 11}, amount: 2250, description: "theft", currency: "gbp"],
+        %BalanceTransaction{date: {2014, 2, 10}, amount: -2350, description: "loss", currency: "gbp"},
+        %BalanceTransaction{date: {2014, 2, 11}, amount: 2250, description: "theft", currency: "gbp"},
         ]) ==
       """
       !Type:Bank

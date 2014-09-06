@@ -4,9 +4,13 @@ defmodule Stripe2qif.Mixfile do
   def project do
     [ app: :stripe2qif,
       version: "0.2.0",
-      elixir: "~> 0.12.4",
-      escript_main_module: Stripe2qif.CLI,
-      deps: deps ]
+      elixir: "1.0.0-rc1",
+      deps: deps,
+      escript: escript]
+  end
+  
+  def escript do
+    [main_module: Stripe2qif.CLI]
   end
 
   # Configuration for the OTP application
@@ -25,9 +29,9 @@ defmodule Stripe2qif.Mixfile do
   defp deps do
     [
       {:httpotion, github: "myfreeweb/httpotion"},
-      {:jsonex, github: "marcelog/jsonex"},
+      {:jsxn, github: "talentdeficit/jsxn"},
       {:ex_doc, github: "elixir-lang/ex_doc"},
-      {:meck, github: "eproxus/meck", tag: "0.8"},
+      {:meck, github: "eproxus/meck"},
       ]
 
   end

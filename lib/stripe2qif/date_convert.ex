@@ -16,14 +16,14 @@ defmodule Stripe2qif.DateConvert do
     case binary_date_to_list(date) do
       :error -> :error
       date_list -> date_list
-                    |> Enum.map(&binary_to_integer/1)
-                    |> list_to_tuple
+                    |> Enum.map(&String.to_integer/1)
+                    |> List.to_tuple
     end
   end
 
   defp binary_date_to_list date do
-    case Regex.named_captures(%r/(?<year>\d{4})-(?<month>\d{1,2})-(?<day>\d{1,2})/g, date) do
-      [year: year, month: month, day: day] -> [year, month, day]
+    case Regex.named_captures(~r/(?<year>\d{4})-(?<month>\d{1,2})-(?<day>\d{1,2})/, date) do
+      %{"year" => year, "month" => month, "day" => day} -> [year, month, day]
       _                                    -> :error
     end
   end

@@ -1,6 +1,8 @@
-[ "ex_doc": {:git, "git://github.com/elixir-lang/ex_doc.git", "1419e7adc1c289cd75587d9f435c412c70c297d9", []},
-  "httpotion": {:git, "git://github.com/myfreeweb/httpotion.git", "1e2c234b025c41cb2ff7570a35efa9f12d28f31b", []},
-  "ibrowse": {:git, "git://github.com/cmullaparthi/ibrowse.git", "108c131d782c693bd3e26a6587da8196ef9282e3", []},
-  "jsonex": {:git, "git://github.com/marcelog/jsonex.git", "6248cad507c8b77ace1dbb907a854a6b5cbc5695", []},
-  "jsx": {:git, "git://github.com/talentdeficit/jsx.git", "9cb8703beecaf4c39e3dbfa293c747a0e7aa6450", []},
-  "meck": {:git, "git://github.com/eproxus/meck.git", "917690864617cb9a565e58484c73275a7b40a997", [tag: "0.8"]} ]
+%{"ex_doc": {:git, "git://github.com/elixir-lang/ex_doc.git", "98567bc87369d710d31d46bfa9ce0d3bf18cb0d4", []},
+  "httpotion": {:git, "git://github.com/myfreeweb/httpotion.git", "1a7d8ac3d5f7c2da5d48496acf3adfc9f73fcc69", []},
+  "ibrowse": {:git, "git://github.com/cmullaparthi/ibrowse.git", "7871e2ebe8811efb64e1917e2de455fa87e8dfe3", [tag: "v4.1.0"]},
+  "jiffy": {:git, "git://github.com/davisp/jiffy.git", "5cd89c1eda3801bdef790b1e7c0e09259332c0fc", []},
+  "jsonex": {:git, "git://github.com/marcelog/jsonex.git", "82e6c416eed5e791073427bf3079d7ab7b85a1e1", []},
+  "jsx": {:git, "git://github.com/talentdeficit/jsx.git", "4d549dd8a990e282c3d57c5f73213674c05ebf07", [branch: "develop"]},
+  "jsxn": {:git, "git://github.com/talentdeficit/jsxn.git", "5fd4c013da26f2b421537760572f6969765fea18", []},
+  "meck": {:git, "git://github.com/eproxus/meck.git", "eb479aa20cd430f62b6c043e826f0eb88a029852", []}}

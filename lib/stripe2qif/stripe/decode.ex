@@ -4,7 +4,7 @@ defmodule Stripe2qif.Stripe.Decode do
 
   def decode_balances << json :: binary >> do
     json
-      |> Jsonex.decode
+      |> :jsxn.decode
       |> decode_balances
   end
 
@@ -24,21 +24,21 @@ defmodule Stripe2qif.Stripe.Decode do
   end
 
   defp main_transaction t do
-    BalanceTransaction[
+    %BalanceTransaction{
       description: t["description"],
       currency: t["currency"],
       amount: t["amount"],
       date: t["created"] |> unix_epoch_to_date,
-      ]
+      }
   end
 
   defp fee_transaction t do
-    BalanceTransaction[
+    %BalanceTransaction{
       description: "(Stripe fee) #{t["description"]}",
       currency: t["currency"],
       amount: -t["fee"],
       date: t["created"] |> unix_epoch_to_date,
-      ]
+      }
   end
 
 end
