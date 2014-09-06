@@ -11,11 +11,6 @@ defmodule Stripe2qifTest do
     :ok
   end
 
-  teardown do
-    :meck.unload(Api)
-    :ok
-  end
-
 
   test "when until is nil, there is no date filter" do
     :meck.expect(Api, :fetch, fn _api, _command, params ->
@@ -24,6 +19,7 @@ defmodule Stripe2qifTest do
     end)
 
     run "123", true, nil
+    :meck.unload(Api)
   end
 
   @feb_23_2014_as_unix_epoch 1393113600
@@ -34,5 +30,6 @@ defmodule Stripe2qifTest do
     end)
 
     run "123", true, {2014, 02, 23}
+    :meck.unload(Api)
   end
 end

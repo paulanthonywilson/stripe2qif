@@ -25,7 +25,7 @@ defmodule Stripe2qif.Mixfile do
   defp deps do
     [
       {:httpotion, github: "myfreeweb/httpotion"},
-      {:jsonex, github: "marcelog/jsonex"},
+      {:jiffy, github: "davisp/jiffy"},
       {:ex_doc, github: "elixir-lang/ex_doc"},
       {:meck, github: "eproxus/meck"},
       ]
