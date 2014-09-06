@@ -3,5 +3,6 @@
   "ibrowse": {:git, "git://github.com/cmullaparthi/ibrowse.git", "7871e2ebe8811efb64e1917e2de455fa87e8dfe3", [tag: "v4.1.0"]},
   "jiffy": {:git, "git://github.com/davisp/jiffy.git", "5cd89c1eda3801bdef790b1e7c0e09259332c0fc", []},
   "jsonex": {:git, "git://github.com/marcelog/jsonex.git", "82e6c416eed5e791073427bf3079d7ab7b85a1e1", []},
-  "jsx": {:git, "git://github.com/talentdeficit/jsx.git", "507fa4c41db33c81e925ab53f4d789d234aaff2f", []},
+  "jsx": {:git, "git://github.com/talentdeficit/jsx.git", "4d549dd8a990e282c3d57c5f73213674c05ebf07", [branch: "develop"]},
+  "jsxn": {:git, "git://github.com/talentdeficit/jsxn.git", "5fd4c013da26f2b421537760572f6969765fea18", []},
   "meck": {:git, "git://github.com/eproxus/meck.git", "eb479aa20cd430f62b6c043e826f0eb88a029852", []}}

@@ -4,7 +4,7 @@ defmodule Stripe2qif.Stripe.Decode do
 
   def decode_balances << json :: binary >> do
     json
-      |> :jiffy.decode([:return_maps])
+      |> :jsxn.decode
       |> decode_balances
   end
 
