@@ -4,9 +4,10 @@ defmodule Stripe2qifTest do
 
   import Stripe2qif, only: [run: 3]
 
-  def empty_dataset do
-    :jiffy.decode("{\"data\": []}", [:return_maps])
-  end
+  # def empty_dataset do
+  #   :jiffy.decode("{\"data\": []}", [:return_maps])
+  # end
+  @empty_dataset %{"data" => []}
 
   setup do
     :meck.new(Api)
@@ -18,7 +19,7 @@ defmodule Stripe2qifTest do
     try do
     :meck.expect(Api, :fetch, fn _api, _command, params ->
       assert params == [count: 100]
-      empty_dataset
+      @empty_dataset
     end)
 
     run "123", true, nil
@@ -32,7 +33,7 @@ defmodule Stripe2qifTest do
     try do
     :meck.expect(Api, :fetch, fn _api, _command, params ->
       assert params == [count: 100, "created[lte]": 1393113600]
-      empty_dataset
+      @empty_dataset
     end)
 
     run "123", true, {2014, 02, 23}
