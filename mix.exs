@@ -5,8 +5,12 @@ defmodule Stripe2qif.Mixfile do
     [ app: :stripe2qif,
       version: "0.2.0",
       elixir: "1.0.0-rc1",
-      escript_main_module: Stripe2qif.CLI,
-      deps: deps ]
+      deps: deps,
+      escript: escript]
+  end
+  
+  def escript do
+    [main_module: Stripe2qif.CLI]
   end
 
   # Configuration for the OTP application
