@@ -9,8 +9,8 @@ defmodule Stripe2qif.Stripe.Decode do
   end
 
   def decode_balances balances do []
-  b = balances["data"]
-  b |> Enum.map(&data_transaction_to_record/1)
+  balances["data"]
+    |> Enum.map(&data_transaction_to_record/1)
     |> List.flatten
   end
 
