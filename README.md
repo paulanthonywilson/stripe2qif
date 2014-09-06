@@ -18,7 +18,7 @@ Note that only 100 transactions are downloaded at a time. It should be possible 
 
 # Build
 
-Assuming you're [set up for Elixir](http://elixir-lang.org/getting_started/1.html), clone
+Assuming you're [set up for Elixir](http://elixir-lang.org/getting_started/1.html), clone.
 
     mix test
     mix escript.build
