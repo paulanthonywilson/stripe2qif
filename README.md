@@ -21,11 +21,11 @@ Note that only 100 transactions are downloaded at a time. It should be possible 
 Assuming you're [set up for Elixir](http://elixir-lang.org/getting_started/1.html), clone
 
     mix test
-    mix escriptize
+    mix escript.build
 
 # Download and run
 
 1. Make sure you have [Erlang installed](http://www.erlang.org/doc/installation_guide/INSTALL.html). On a Mac with Homebrew _brew install erlang_ should do the trick.
-2. [Download](https://github.com/paulanthonywilson/stripe2qif/releases/download/v0.1.0/stripe2qif) and stick on the path.
+2. [Download](https://github.com/paulanthonywilson/stripe2qif/releases/download/v0.3.0/stripe2qif) and stick on the path.
 
 
