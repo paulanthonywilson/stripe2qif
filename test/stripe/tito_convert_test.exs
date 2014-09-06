@@ -5,7 +5,7 @@ defmodule Stripe.TitoConvert do
 
 
   defp convert_description description, do_conversion do
-    (tito_convert([BalanceTransaction[description: description]], do_conversion) |> List.first).description
+    (tito_convert([%BalanceTransaction{description: description}], do_conversion) |> List.first).description
   end
 
   test "doesn't convert not matching tickets" do
