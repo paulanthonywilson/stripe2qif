@@ -4,7 +4,7 @@ defmodule Stripe2qif.Mixfile do
   def project do
     [ app: :stripe2qif,
       version: "0.3.0",
-      elixir: "1.0.0-rc1",
+      elixir: "1.0.0",
       deps: deps,
       escript: escript]
   end
